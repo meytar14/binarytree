@@ -124,9 +124,9 @@ public:
     {
         return iterator{root};
     }
-    friend std::ostream& operator<<(std::ostream& os,const BinaryTree& tree )
+    friend std::ostream& operator<<(std::ostream& output,const BinaryTree& t )
     {
-        return os;
+        return output;
     }    
 };
 
