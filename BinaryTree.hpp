@@ -30,18 +30,18 @@ template<typename T> class BinaryTree
     class iterator
     {
         private:
-        Node* current_node;
+        Node* current_node;//the current node that the iterator is on 
         public:
         iterator(Node* n=nullptr)
         {
             current_node=n;
         }
-        T* operator->()const 
+        T* operator->()const //return the adress of the current node
         {
             return &(current_node->data);
         }
         
-        T& operator*()
+        T& operator*()//return the data of the current node
         {
             return current_node->data;
         }
@@ -51,11 +51,19 @@ template<typename T> class BinaryTree
         } 
         bool operator==(const iterator& other) const
         {
-            return current_node==other.current_node;
+            if(current_node==other.current_node)//if the adressers of the two current nodes are the same -> return true
+            {
+                return true;
+            }
+            return false;
         }
         bool operator!=(const iterator& other) const
         {
-            return (current_node!=other.current_node);
+            if(current_node!=other.current_node)
+            {
+                return true;
+            }
+            return false;
         }
     };
 
