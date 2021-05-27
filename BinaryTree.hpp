@@ -27,12 +27,12 @@ template<typename T> class BinaryTree
     };
 
 
-    class iterator
+    class Iter
     {
         private:
-        Node* current_node;//the current node that the iterator is on 
+        Node* current_node;//the current node that the Iter is on 
         public:
-        iterator(Node* n=nullptr)
+        Iter(Node* n=nullptr)
         {
             current_node=n;
         }
@@ -45,11 +45,11 @@ template<typename T> class BinaryTree
         {
             return current_node->data;
         }
-        iterator& operator++()
+        Iter& operator++()
         {
             return *this;
         } 
-        bool operator==(const iterator& other) const
+        bool operator==(const Iter& other) const
         {
             if(current_node==other.current_node)//if the adressers of the two current nodes are the same -> return true
             {
@@ -57,7 +57,7 @@ template<typename T> class BinaryTree
             }
             return false;
         }
-        bool operator!=(const iterator& other) const
+        bool operator!=(const Iter& other) const
         {
             if(current_node!=other.current_node)
             {
@@ -90,39 +90,39 @@ public:
     {
         return *this;
     }
-    iterator begin_preorder()
+    Iter begin_preorder()
     {
-        return iterator{root};
+        return Iter(root);
     }
-    iterator end_preorder()
+    Iter end_preorder()
     {
-        return iterator{root};
+        return Iter(root);
     }
-    iterator begin_postorder()
+    Iter begin_postorder()
     {
-        return iterator{root};
+        return Iter(root);
     }
 
 
-    iterator end_postorder()
+    Iter end_postorder()
     {
-        return iterator{root};
+        return Iter(root);
     }
-    iterator begin_inorder()
+    Iter begin_inorder()
     {
-        return iterator{root};
+        return Iter(root);
     }
-    iterator end_inorder()
+    Iter end_inorder()
     {
-        return iterator{root};
+        return Iter(root);
     }
-    iterator begin()
+    Iter begin()
     {
-        return iterator{root};
+        return Iter(root);
     }
-    iterator end()
+    Iter end()
     {
-        return iterator{root};
+        return Iter(root);
     }
     friend std::ostream& operator<<(std::ostream& output,const BinaryTree& t )
     {
